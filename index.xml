@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vertalo API Primer</title>
+    <link>https://api.vertalo.com/</link>
+    <description>Recent content on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 26 Jan 2020 04:15:05 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Create a Distribution</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/create-distribution/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/create-distribution/</guid>
+        <description>Request: mutation { makeDistribution ( input: { _allocationId: &amp;#34;abb668d2-63d2-43dd-b495-b1e413a69427&amp;#34; accountEmail: &amp;#34;bob.smith@example.com&amp;#34; name: &amp;#34;Bob Smith&amp;#34; amount: &amp;#34;100000&amp;#34; } ) { distribution { id status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeDistribution&amp;#34;: { &amp;#34;distribution&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;drafted&amp;#34; } } } } A distribution is an initial assignment of a quantity of units (typically shares) to an investor within an allocation which is meant to represent a pro forma position that the investor is interested in taking in a particular offering.</description>
+      </item>
+      
+      <item>
+        <title>Create a Security Document</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/security-document/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/security-document/</guid>
+        <description>Request: mutation { makeSecurityDocument( input: { name: &amp;#34;PPM&amp;#34;, extension: &amp;#34;pdf&amp;#34;, securityId: &amp;#34;5f30ff94-8bb7-490e-be24-8b935d786b93&amp;#34;, shareWith: [] }) { uploadInfo securityDocumentId accountDocumentId documentId } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeSecurityDocument&amp;#34;: { &amp;#34;uploadInfo&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://s3.amazonaws.com/documents.vertalo&amp;#34;, &amp;#34;fields&amp;#34;: { &amp;#34;key&amp;#34;: &amp;#34;example/ed0b1825-b86c-4b0f-a2a0-2aff4eb18d34.pdf&amp;#34;, &amp;#34;Content-Type&amp;#34;: &amp;#34;application/pdf&amp;#34;, &amp;#34;bucket&amp;#34;: &amp;#34;documents.vertalo&amp;#34;, &amp;#34;X-Amz-Algorithm&amp;#34;: &amp;#34;AWS4-HMAC-SHA256&amp;#34;, &amp;#34;X-Amz-Credential&amp;#34;: &amp;#34;...2JXETTCGRODP/20220212/us-east-1/s3/aws4_request&amp;#34;, &amp;#34;X-Amz-Date&amp;#34;: &amp;#34;20220212T164558Z&amp;#34;, &amp;#34;X-Amz-Security-Token&amp;#34;: &amp;#34;IQoJb3JpZ2luX2VjEBQaCXVzLWVhc3QtMiJGME...p5kLZtLsrlro2vJQ==&amp;#34;, &amp;#34;Policy&amp;#34;: &amp;#34;eyJleHBpcmF0aW9uIjoiMjAyMi0wMi0xMlQxNzo0NTo1OFoiLCJjb25...szZHJBVRPT0ifV19&amp;#34;, &amp;#34;X-Amz-Signature&amp;#34;: &amp;#34;652018d81b2c8c48fc1585f3d1a...ed21e4aa2d24ac55cefdb8b0be2&amp;#34; } }, &amp;#34;securityDocumentId&amp;#34;: &amp;#34;50846d44-537e-4e80-9ae9-1059b6d2195a&amp;#34;, &amp;#34;accountDocumentId&amp;#34;: null, &amp;#34;documentId&amp;#34;: &amp;#34;ed0b1825-b86c-4b0f-a2a0-2aff4eb18d34&amp;#34; } } } Input parameters:
+name: file name extension: file extension without leading &amp;ldquo;.</description>
+      </item>
+      
+      <item>
+        <title>Create an Asset</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-asset/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-asset/</guid>
+        <description>Request: mutation { createAsset ( input: { asset: { name: &amp;#34;Example Asset #1&amp;#34; type: &amp;#34;Preferred Equity&amp;#34; authorizedTotal: &amp;#34;5000000&amp;#34; status: &amp;#34;Active&amp;#34; } } ) { asset { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createAsset&amp;#34;: { &amp;#34;asset&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;b29704fd-5613-4f16-b712-a942a126413b&amp;#34; } } } } Numeric field Usage authorizedTotal The total number of shares/units authorized for sale overall In this example, the mutation creates a new asset with the required properties. It also shows a return payload requested as part of the mutation.</description>
+      </item>
+      
+      <item>
+        <title>Initialize a Token</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/initialize-token/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/initialize-token/</guid>
+        <description>Request: mutation { makeToken ( input: { _tokenId: &amp;#34;7ae8c3b7-43a4-4ee3-99c8-812e101d3859&amp;#34; _chain: &amp;#34;ethereum-vertalo&amp;#34; _name: &amp;#34;Series A Token&amp;#34; _symbol: &amp;#34;SERIESA&amp;#34; } ) { token { contractsByTokenId { nodes { id } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeToken&amp;#34;: { &amp;#34;token&amp;#34;: { &amp;#34;contractsByTokenId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;48e2486f-a988-4f92-9794-4df831c03879&amp;#34; } ] } } } } } In this example, the mutation initializes a new token for a round. There is a one-to-one relationship between round and token, with a token ID being automatically assigned at the creation of a round.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/api-key/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/overview/</guid>
+        <description>All of the concepts, capabilities, and examples described previously in the API primer are available programmatically via API credentials. Vertalo will issue clients testing and production credentials (a client ID and client secret) for server-side programmatic access to their account(s). The process of using the credentials to claim the required access tokens and issue queries and mutations to the Vertalo API is described in the sections that follow. We strongly encourage you to use your regular login credentials to make use of Vertalo&amp;rsquo;s user portal and interactive GraphiQL interface (described in detail above in this document), in addition to your testing API credentials, to test your queries in your sandbox environment before implementing them in production.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/appendix/legacy/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/legacy/overview/</guid>
+        <description>As the Vertalo platform evolves, certain operations may change. In order to maintain backward compatability, these legacy operations (and the API call(s) associated with them) will remain in place for a period of time to be determined by Vertalo, and then deprecated. Prior to deprecation, those currently relying on these operations should use the following migration strategy:
+Update your code to the newer version of the operation. Deploy and test your updated code (in the your testing environment) using your Vertalo sandbox API keys, carefully verifying the updated operations using the Vertalo sandbox portal where appropriate.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/overview/</guid>
+        <description>ATS/Exchange integrations are standardized through an API derived from the Vertalo GraphQL schema. Because of the high compliance requirements/costs associated with post-issuance trading and transfer, the goal of the Vertalo API is designed to make it as easy as possible to convey data between systems in order to maximize consistency. While the Vertalo platform uses a transaction-based architecture under the hood, we do not currently expose this to the API user and translate trading and transfer calls to transactions as needed.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/broker/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/overview/</guid>
+        <description>The Vertalo platform offers support for organizations that assist issuers with their digital securities offerings, including:
+Broker-Dealers Registered Investment Advisors Capital Advisors Deal Packaging Consultants This type of organization is generically referred to as a &amp;ldquo;broker&amp;rdquo; in the Vertalo system, and there are specific capabilities associated with this role. If you fall within the broker category you may use the API to make use of these capabilities. Please refer to the Roles section of the Introduction for additional detail on broker privileges.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/coding-examples/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/overview/</guid>
+        <description>These coding examples are meant to provide you with guidance on how to program the process of authenticating and authorizing with the Vertalo platform via the API, and show examples of how to submit queries to the Vertalo GraphQL endpoint. You will need to request your API credentials from Vertalo before you can access the API.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/custodian/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/overview/</guid>
+        <description>Custodian actions may be utilized by different parties depending on the requirements of their integration with the Vertalo platform. For instance, registered/qualified custodians may need to interact with an issuer&amp;rsquo;s cap tables in order to request the transfer of holdings from an investor into an omnibus account in the name of the custodian. The same applies for registered/qualified BD/ATS&amp;rsquo;s where the BD/ATS is permitted to hold an investor&amp;rsquo;s securities in street-name for the purpose of trading.</description>
+      </item>
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/issuer/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/overview/</guid>
+        <description>The actions for an issuer in a primary issuance context follow a typical ordering:
+Configure assets/rounds/allocations Create customers Record investment interest Record receipt of funds Issue securities Tokenize securities (optional) The sections of this chapter are laid out to follow this sequence.
+Syndication An issuer may choose to syndicate the fulfillment of a round by inviting brokers to participate. In this circumstance, the broker is effectively a quasi-issuer for that round and can perform certain similar functions to that of an issuer, specifically, creating allocations and distributions.</description>
+      </item>
+      
+      <item>
+        <title>Welcome!</title>
+        <link>https://api.vertalo.com/docs/introduction/welcome/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/welcome/</guid>
+        <description>The Vertalo platform is a modern, blockchain-aware architecture that supports many functions, including:
+Digital asset configuration and management Investor onboarding (with KYC/AML, accreditation, document signing) Payment processing Cap table management Securities issuance Tokenization ATS integration General transfer agency services As an &amp;ldquo;integration first&amp;rdquo; company, Vertalo has designed its platform in an open and flexible way. This makes it possible for our partners to integrate with our platform through the Vertalo API when and where it&amp;rsquo;s needed.</description>
+      </item>
+      
+      <item>
+        <title>Authentication</title>
+        <link>https://api.vertalo.com/docs/api-key/authentication/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/authentication/</guid>
+        <description>/authenticate/token/login Once you&amp;rsquo;ve been issued a client ID and client secret, you will be able to generate a bearer token which you will then use to associate your access with a specific role that has been configured for your account.
+Request:
+curl &amp;#39;https://sandbox.vertalo.com/authenticate/token/login?client_id=&amp;lt;client ID&amp;gt;&amp;amp;client_secret=&amp;lt;client secret&amp;gt;&amp;#39; Response:
+{ &amp;#34;token&amp;#34;: { &amp;#34;token_type&amp;#34;: &amp;#34;Bearer&amp;#34;, &amp;#34;access_token&amp;#34;: &amp;#34;&amp;lt;token&amp;gt;&amp;#34; }, &amp;#34;roles&amp;#34;: { &amp;#34;data&amp;#34;: [ { &amp;#34;last_name&amp;#34;: &amp;#34;example&amp;#34;, &amp;#34;user_role&amp;#34;: &amp;#34;account_admin&amp;#34;, &amp;#34;account_type&amp;#34;: &amp;#34;broker&amp;#34;, &amp;#34;account_name&amp;#34;: &amp;#34;Example&amp;#34;, &amp;#34;user_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;users_account_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;account_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;slug&amp;#34;: &amp;#34;example&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;admin@example.</description>
+      </item>
+      
+      <item>
+        <title>Bulk Deposit</title>
+        <link>https://api.vertalo.com/docs/custodian/bulk-deposit/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/bulk-deposit/</guid>
+        <description>Request: mutation { bulkDeposit ( input : { securityId: &amp;#34;&amp;#34; idempotencyId: &amp;#34;&amp;#34; deposit: [ { idempotencyId: &amp;#34;&amp;#34; depositAddressId: &amp;#34;&amp;#34; investorId: &amp;#34;&amp;#34; externalInvestorId: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; holdings: [ { id: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } ] signature: { status: &amp;#34;&amp;#34; signature: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; } investorInformation: { name: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } parties: [ { firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] } ] } tags: [ { id: &amp;#34;&amp;#34; data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } ] fee: { currency: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } } ] } ) { id accountId securityId requestId type status createdOn executedOn requestByRequestId { data } } } Numeric field Usage deposit.</description>
+      </item>
+      
+      <item>
+        <title>Conditions &amp; Filters</title>
+        <link>https://api.vertalo.com/docs/appendix/conditions-filters/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/conditions-filters/</guid>
+        <description>In previous examples, you will have noticed the use of the condition keyword at various points in the query, which provides a rudimentary means to filter for specific values. The Vertalo API also supports the filter keyword, which provides even more advanced capabilities.
+Request: query { allAccounts (condition: {type: &amp;#34;investor&amp;#34;, email: &amp;#34;bob.smith@example.com&amp;#34;}) { nodes { id name email distributionsByInvestorId { nodes { amount allocationByAllocationId { name roundByRoundId { name assetByAssetId { name } } } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;allAccounts&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Bob Smith&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;bob.</description>
+      </item>
+      
+      <item>
+        <title>Create a Holding Document</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/holding-docucment/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/holding-docucment/</guid>
+        <description>Request: mutation { makeHoldingDocument( input: { name: &amp;#34;PPM&amp;#34;, extension: &amp;#34;pdf&amp;#34;, holdingId: &amp;#34;71ac4fd6-2877-46bd-a8b9-f76bca6d6dc4&amp;#34;, shareWith: [&amp;#34;investor&amp;#34;] }) { uploadInfo holdingDocumentId accountDocumentId documentId } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeHoldingDocument&amp;#34;: { &amp;#34;uploadInfo&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://s3.amazonaws.com/documents.vertalo&amp;#34;, &amp;#34;fields&amp;#34;: { &amp;#34;key&amp;#34;: &amp;#34;example/1c8e4025-2fbe-40ec-ba18-b910fb4db2f6.pdf&amp;#34;, &amp;#34;Content-Type&amp;#34;: &amp;#34;application/pdf&amp;#34;, &amp;#34;bucket&amp;#34;: &amp;#34;documents.vertalo&amp;#34;, &amp;#34;X-Amz-Algorithm&amp;#34;: &amp;#34;AWS4-HMAC-SHA256&amp;#34;, &amp;#34;X-Amz-Credential&amp;#34;: &amp;#34;...JXETTCGRODP/20220212/us-east-1/s3/aws4_request&amp;#34;, &amp;#34;X-Amz-Date&amp;#34;: &amp;#34;20220212T165022Z&amp;#34;, &amp;#34;X-Amz-Security-Token&amp;#34;: &amp;#34;IQoJb3JpZ2luX2VjEBQaCXVzLWVhkyl...g9Pp5kLZtLsrlro2vJQ==&amp;#34;, &amp;#34;Policy&amp;#34;: &amp;#34;eyJleHBpcmF0aW9uIjoiMjAyMi0wMi0xMlQxNzo...WtMWnRMc3Jscm8ydkpRPT0ifV19&amp;#34;, &amp;#34;X-Amz-Signature&amp;#34;: &amp;#34;ebe00453aded2a1c20bdafb...2129eddf5f42a50e45e77130aeeb1c0&amp;#34; } }, &amp;#34;holdingDocumentId&amp;#34;: &amp;#34;75718a2b-81e5-4655-8c37-7a5f47a4be45&amp;#34;, &amp;#34;accountDocumentId&amp;#34;: null, &amp;#34;documentId&amp;#34;: &amp;#34;1c8e4025-2fbe-40ec-ba18-b910fb4db2f6&amp;#34; } } } Input parameters:
+name: file name extension: file extension without leading &amp;ldquo;.</description>
+      </item>
+      
+      <item>
+        <title>Create a Round</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-round/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-round/</guid>
+        <description>Request: mutation { makeRound ( input: { assetId: &amp;#34;b29704fd-5613-4f16-b712-a942a126413b&amp;#34; name: &amp;#34;Series A&amp;#34; opensOn: &amp;#34;2022-01-01&amp;#34; closesOn: &amp;#34;2022-03-31&amp;#34; total: &amp;#34;2000000&amp;#34; price: &amp;#34;1.00&amp;#34; status: &amp;#34;Active&amp;#34; termsUrl: &amp;#34;https://dataroom.example.com&amp;#34; } ) { round { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeRound&amp;#34;: { &amp;#34;round&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;3fb91ee2-eb13-4308-b4ca-1c968a6546a4&amp;#34; } } } } Numeric field Usage total The total number of shares/units authorized for sale in the round price The price per share/unit expressed in USD In this example, the mutation creates a new round that is associated with the asset created in the previous example.</description>
+      </item>
+      
+      <item>
+        <title>Create an Investor</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/create-investor/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/create-investor/</guid>
+        <description>Request: mutation { makeInvestor( input: { name: &amp;#34;John Jones&amp;#34; email: &amp;#34;john.jones@example.com&amp;#34; } ) { account { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeInvestor&amp;#34;: { &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;9452007f-429c-478d-92f2-096b8e32b829&amp;#34; } } } } In this example, the mutation creates a new investor. This makes it possible for an ATS to pre-populate investors on the Vertalo platform prior to trading in order create efficiencies when trading eventually occurs. This is not a requirement, however, as new investors (those not already on the Vertalo platform) can be automatically created when trades are recorded.</description>
+      </item>
+      
+      <item>
+        <title>Create an Issuer</title>
+        <link>https://api.vertalo.com/docs/broker/create-issuer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/create-issuer/</guid>
+        <description>Request: mutation { makeIssuerAccount ( input: { companyName: &amp;#34;Example Issuer&amp;#34; companyEmail: &amp;#34;mary.johnson@example.com&amp;#34; } ) { account { id type } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeIssuerAccount&amp;#34;: { &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;a68a3ac2-5110-4207-9bad-e9acbdec6f1a&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;issuer&amp;#34; } } } } In this example, the mutation creates a new issuer. The ID of the newly created issuer is returned in the payload. You then have the option to switch to this issuer role and perform actions as the issuer.</description>
+      </item>
+      
+      <item>
+        <title>Deploy a Contract</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/deploy-contract/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/deploy-contract/</guid>
+        <description>Request: mutation { deployContract ( input: { _contractId: &amp;#34;48e2486f-a988-4f92-9794-4df831c03879&amp;#34; } ) { contract { contractAddress } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;deployContract&amp;#34;: { &amp;#34;contract&amp;#34;: { &amp;#34;contractAddress&amp;#34;: &amp;#34;0x6537d77941ef111b4c853d38a03fe9478bc36d41&amp;#34; } } } } In this example, the mutation deploys a smart contract (associated to a token) to the blockchain and returns the on-chain contract address in the payload. Note that the contract ID returned from the previous example of the initialization of a token is used in the deployment of the contract.</description>
+      </item>
+      
+      <item>
+        <title>Issue Distributions</title>
+        <link>https://api.vertalo.com/docs/appendix/legacy/issue-distributions/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/legacy/issue-distributions/</guid>
+        <description>Request: mutation { issueDistributions ( input: { distributionIds: [ &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; ] } ) { issuanceEvents { holdingId } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;issueDistributions&amp;#34;: { &amp;#34;issuanceEvents&amp;#34;: [ { &amp;#34;holdingId&amp;#34;: &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34; } ] } } } In order to maintain backward compatability with the previous method of issuing distributions, the issueDistributions mutation will remain in place for a period of time to be determined. This mutation will eventually be fully deprecated, and those currently using it will have to migrate to the new method described in the section Request Distribution Issuance under Issuer Actions &amp;raquo; Primary Issuance.</description>
+      </item>
+      
+      <item>
+        <title>Python</title>
+        <link>https://api.vertalo.com/docs/coding-examples/python-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/python-example/</guid>
+        <description>This example makes use of an open-source GraphQL client module for Python, gql. You must first install this module into your Python environment to use it, as well as other modules referenced if not already installed.
+import requests import json # # Import from GraphQL client library for Python... # from gql import gql, Client from gql.transport.aiohttp import AIOHTTPTransport # # Call token discovery endpoint... # response = requests.get(&amp;#34;https://sandbox.vertalo.com/authenticate/token/discovery&amp;#34;) # print(response.</description>
+      </item>
+      
+      <item>
+        <title>Record a Payment</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/record-payment/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/record-payment/</guid>
+        <description>Request: mutation { createDistributionPayment( input: { distributionPayment: { distributionId: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; amount: &amp;#34;100000&amp;#34; } } ) { distributionPayment { id paidOn } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createDistributionPayment&amp;#34;: { &amp;#34;distributionPayment&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;1e0b807f-4d89-4331-92b7-f7beaf25617a&amp;#34;, &amp;#34;paidOn&amp;#34;: &amp;#34;2022-01-01T18:49:48.237216+00:00&amp;#34; } } } } In this example, the mutation records a payment against a distribution. The ID and paid-on date of the payment is returned in the payload. Note that the distribution ID returned from the previous example of the creation of a distribution is used in the recording of the payment.</description>
+      </item>
+      
+      <item>
+        <title>Roles</title>
+        <link>https://api.vertalo.com/docs/introduction/roles/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/roles/</guid>
+        <description>It&amp;rsquo;s important that you understand the basic Vertalo access control model and how your API access fits within it. A central part of the Vertalo access control model is the concept of roles. The following roles are currently supported:
+Role Description System Privileges Issuer A legal entity that registers and sells securities, with the purpose of generating income to fund operations. Create assets, rounds, allocations, distributions; manage investors; issue and tokenize holdings Broker A legal entity that assists with the distribution of an issuer&amp;rsquo;s offerings to investors, including broker-dealers, registered investment advisors, capital advisors.</description>
+      </item>
+      
+      <item>
+        <title>Setup Customer Information</title>
+        <link>https://api.vertalo.com/docs/issuer/investor-setup/setup-customer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/investor-setup/setup-customer/</guid>
+        <description>Request: mutation { setupCustomer ( input: { name: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; accountSetupData: { type: &amp;#34;&amp;#34; formationDate: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] parties: [ { email: &amp;#34;&amp;#34; firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; dateOfBirth: &amp;#34;&amp;#34; usCitizen: true isPrimary: true allowLogin: true addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] } ] } } ) { customer { id investorId } } } The example above shows the full extent of the setupCustomer mutation, through which you submit details for a customer (investor).</description>
+      </item>
+      
+      <item>
+        <title>Accept Issuer Invitation</title>
+        <link>https://api.vertalo.com/docs/broker/accept-invite/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/accept-invite/</guid>
+        <description>Syndication As mentioned in the overview to this chapter, an issuer may choose to syndicate the fulfillment of a round by inviting brokers to participate. This is only possible in cases where the broker has created the issuer, either through the Vertalo portal or programmatically via the API (as described in the previous section). The issuer then (and only then) has the option to invite the broker to a round they have previously created.</description>
+      </item>
+      
+      <item>
+        <title>Assign a Wallet Address</title>
+        <link>https://api.vertalo.com/docs/issuer/investor-setup/assign-wallet/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/investor-setup/assign-wallet/</guid>
+        <description>Request: mutation { makeExternalBlockchainAddress ( input: { address: &amp;#34;0x71C7656EC7ab88b098defB751B7401B5f6d8976F&amp;#34; chain: &amp;#34;ethereum-mainnet&amp;#34; investorId: &amp;#34;a928056c-d33e-4960-8796-bf3c2af86b77&amp;#34; } ) { blockchainAddress { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeExternalBlockchainAddress&amp;#34;: { &amp;#34;blockchainAddress&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;af495a87-4f1f-4694-ab57-69a3cbcb30de&amp;#34; } } } } In this example, a blockchain wallet address is assigned to an investor. The assumption is that an investor has created a self-sovereign wallet on a blockchain supported by Vertalo, and then provided it to the vendor who then passes it through to the Vertalo system.</description>
+      </item>
+      
+      <item>
+        <title>Batch Transfer</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/batch-transfer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/batch-transfer/</guid>
+        <description>Request: mutation { batchTransfer ( input: { idempotencyId: &amp;#34;&amp;#34; transfer: [ { idempotencyId: &amp;#34;&amp;#34; investorId: &amp;#34;&amp;#34; securityId: &amp;#34;&amp;#34; usdPrice: &amp;#34;&amp;#34; transferPrice: { currency: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } holdings: [ { id: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } ] signature: { status: &amp;#34;&amp;#34; signature: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; } investorInformation: { name: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] parties: [ { firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } to: { id: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; name: &amp;#34;&amp;#34; jurisdiction: &amp;#34;&amp;#34; accountSetupData: { type: &amp;#34;&amp;#34; formationDate: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] parties: [ { email: &amp;#34;&amp;#34; firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; dateOfBirth: &amp;#34;&amp;#34; usCitizen: true isPrimary: true allowLogin: true addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] } ] } } tags: [ { id: &amp;#34;&amp;#34; data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } matchedOn: &amp;#34;&amp;#34; settledOn: &amp;#34;&amp;#34; } ] } ) { id requestId type status createdOn executedOn requestByRequestId { data } } } Numeric field Usage transfer.</description>
+      </item>
+      
+      <item>
+        <title>Calling GraphQL</title>
+        <link>https://api.vertalo.com/docs/api-key/calling-graphql/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/calling-graphql/</guid>
+        <description>/token/api/v2/graphql Using the response from the /token/role endpoint, use the value of the access_token field to construct a request to a single /token/api/v2/graphql endpoint through which you issue properly formed GraphQL queries and mutations to the Vertalo API.
+Request:
+curl --location --request POST &amp;#39;https://sandbox.vertalo.com/token/api/v2/graphql&amp;#39; --header &amp;#39;Authorization: Bearer &amp;lt;access_token&amp;gt;&amp;#39; --header &amp;#39;Content-Type: application/json&amp;#39; --data-raw &amp;#39;{&amp;#34;query&amp;#34;: &amp;#34;query {\n allAssets {\n nodes {\n name\n type\n status\n authorizedTotal\n}\n}\n}&amp;#34;, &amp;#34;variables&amp;#34;:{}}&amp;#39; Response:
+{ &amp;#34;data&amp;#34;: { &amp;#34;allAssets&amp;#34;: { &amp;#34;nodes&amp;#34;: [{ &amp;#34;name&amp;#34;: &amp;#34;Example Preferred Equity&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;Preferred Equity&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;active&amp;#34;, &amp;#34;authorizedTotal&amp;#34;: &amp;#34;5000000&amp;#34; }] } } } </description>
+      </item>
+      
+      <item>
+        <title>Create a Tranche (Debt)</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-tranche/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-tranche/</guid>
+        <description>Request: mutation { makeTranche ( input: { assetId: &amp;#34;08baabd1-39ea-49be-9888-7755afe8b94a&amp;#34; name: &amp;#34;Tranche - AAA&amp;#34; opensOn: &amp;#34;2023-08-01&amp;#34; closesOn: &amp;#34;2023-12-31&amp;#34; total: &amp;#34;70000000&amp;#34; price: &amp;#34;1.00&amp;#34; status: &amp;#34;Active&amp;#34; termsUrl: &amp;#34;https://dataroom.example.com&amp;#34; coupon: &amp;#34;6.25&amp;#34; term: &amp;#34;3&amp;#34; } ) { round { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTranche&amp;#34;: { &amp;#34;round&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;a0471b97-5265-4fad-affa-f51637dfafe2&amp;#34; } } } } Numeric field Usage total The total number of shares/units authorized for sale in the tranche price The price per share/unit expressed in USD coupon The % return/yield on the investment term The duration of the investment If the asset in question is a debt instrument (a bond, for example), you will need to employ the makeTranche mutation rather than the makeRound mutation from the previous section due to the need for additional information (coupon and term).</description>
+      </item>
+      
+      <item>
+        <title>Error Codes</title>
+        <link>https://api.vertalo.com/docs/appendix/error-codes/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/error-codes/</guid>
+        <description>Below is a list of current error codes produced by the Vertalo API.
+Code Description 1 Permission denied. 100 Invalid token name. 101 Invalid token symbol. 130 Token information cannot be edited once deployed. 210 Invalid blockchain registration method. 211 Invalid blockchain chain. 320 Allocation status cannot be edited once the issuance process begins. 330 Allocations must be closed in order to issue. 331 All holdings must be closed or locked before the allocation can close.</description>
+      </item>
+      
+      <item>
+        <title>Example Upload Code</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/upload-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/upload-example/</guid>
+        <description>/** * Upload file to S3 with previously received pre-signed POST data. * @param presignedPostData * @param file * @returns {Promise&amp;lt;any&amp;gt;} */ const uploadFileToS3 = (presignedPostData, file) =&amp;gt; { return new Promise((resolve, reject) =&amp;gt; { const formData = new FormData(); Object.keys(presignedPostData.fields).forEach(key =&amp;gt; { formData.append(key, presignedPostData.fields[key]); }); // Actual file has to be appended last. formData.append(&amp;#34;file&amp;#34;, file); const xhr = new XMLHttpRequest(); xhr.open(&amp;#34;POST&amp;#34;, presignedPostData.url, true); xhr.send(formData); xhr.onload = function() { this.status === 204 ?</description>
+      </item>
+      
+      <item>
+        <title>Mint Tokens</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/mint-token/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/mint-token/</guid>
+        <description>Request: mutation { tokenizeHoldings ( input: { holdingIds: [ &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34; ] } ) { holdings { investorId issuedOn holdingBlockchainAddressesByHoldingId { nodes { blockchainAddressId blockchainAddressByBlockchainAddressId { address } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;tokenizeHoldings&amp;#34;: { &amp;#34;holdings&amp;#34;: [ { &amp;#34;investorId&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;issuedOn&amp;#34;: &amp;#34;2021-12-16T22:05:46.253555+00:00&amp;#34;, &amp;#34;holdingBlockchainAddressesByHoldingId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;blockchainAddressId&amp;#34;: &amp;#34;28978c2d-d5e6-498c-a462-fd19b803b8d2&amp;#34;, &amp;#34;blockchainAddressByBlockchainAddressId&amp;#34;: { &amp;#34;address&amp;#34;: &amp;#34;0x99032ac273e339e3fd26e27d26146c0fe668b927&amp;#34; } } ] } } ] } } } In this example, the mutation mints tokens to investor wallets based on their holding IDs.</description>
+      </item>
+      
+      <item>
+        <title>PHP</title>
+        <link>https://api.vertalo.com/docs/coding-examples/php-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/php-example/</guid>
+        <description>This example makes use of the cURL extension for PHP. This extension must be enabled in your PHP configuration to use it.
+&amp;lt;?php $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, &amp;#34;https://www.sandbox.vertalo.com/authenticate/token/discovery&amp;#34;); curl_exec($ch); curl_close($ch); // // Get LOGIN access token... // $client_id = &amp;#34;&amp;lt;your client ID&amp;gt;&amp;#34;; $client_secret = &amp;#34;&amp;lt;your client secret&amp;gt;&amp;#34;; curl_setopt($ch, CURLOPT_URL, &amp;#34;https://www.sandbox.vertalo.com/authenticate/token/login?client_id=$client_id&amp;amp;client_secret=$client_secret&amp;#34;); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); $response = curl_exec($ch); $response = json_decode($response, true); $access_token = $response[&amp;#34;token&amp;#34;][&amp;#34;access_token&amp;#34;]; $users_account_id = $response[&amp;#34;roles&amp;#34;][&amp;#34;data&amp;#34;][0][&amp;#34;users_account_id&amp;#34;]; // print(&amp;#34;$access_token\n&amp;#34;); // print(&amp;#34;$users_account_id\n&amp;#34;); // // Get ROLE access token.</description>
+      </item>
+      
+      <item>
+        <title>Querying Requests</title>
+        <link>https://api.vertalo.com/docs/custodian/all-requests/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/all-requests/</guid>
+        <description>Request: query { allRequests { nodes { id accountId data type createdOn stagedTransfersByRequestId { nodes { id accountId securityId type status webhookId data createdOn executedOn } } } } } In this example, the query returns ALL requests submitted by the custodian using the bulkDeposit mutation documented in this chapter. Standard GraphQL conditions/filters may be applied to this type of query in order limit the size of the result set. See the Appendix for more details.</description>
+      </item>
+      
+      <item>
+        <title>Update a Distribution</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/update-distribution/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/update-distribution/</guid>
+        <description>Request: mutation { updateDistributionById ( input: { id: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; distributionPatch: {status: &amp;#34;closed&amp;#34;} } ) { distribution { id status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;updateDistributionById&amp;#34;: { &amp;#34;distribution&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;closed&amp;#34; } } } } When a distribution is initially created for an investor the status of the distribution is set to &amp;ldquo;drafted&amp;rdquo;, indicating that this is a pro forma distribution that the issuer will approve in order to allow the investor to proceed through the investment process.</description>
+      </item>
+      
+      <item>
+        <title>Accounts &amp; Users</title>
+        <link>https://api.vertalo.com/docs/introduction/accounts-users/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/accounts-users/</guid>
+        <description>There is a distinction between accounts and users in the Vertalo system. An account defines an entity in the system to which a single role is assigned (for instance, the issuer role). One or more users are then assigned as a delegate to the account and these users exercise the rights that the role allows. So in effect, an account is a collection of privileges granted to an entity.
+Delegation The delegation model described above allows for a one-to-many relationship between account and users, and gives you a great deal of flexibility as to how to manage access to the accounts you control.</description>
+      </item>
+      
+      <item>
+        <title>Create a Delegate</title>
+        <link>https://api.vertalo.com/docs/broker/create-delegate/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/create-delegate/</guid>
+        <description>Request: mutation { makeDelegate ( input: { firstName: &amp;#34;Some&amp;#34; lastName: &amp;#34;Delegate&amp;#34; email: &amp;#34;some.delegate@example.com&amp;#34; role: &amp;#34;account_admin&amp;#34; } ) { usersAccount { userId role status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeDelegate&amp;#34;: { &amp;#34;usersAccount&amp;#34;: { &amp;#34;userId&amp;#34;: &amp;#34;f24dbbea-742c-4513-96e9-6b2f4edadcc3&amp;#34;, &amp;#34;role&amp;#34;: &amp;#34;account_admin&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;active&amp;#34; } } } } In this example, the migration adds a delegate to the account role under whose authority you are operating. Possible values for the &amp;ldquo;role&amp;rdquo; field in the mutation are:</description>
+      </item>
+      
+      <item>
+        <title>Create an Allocation</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-allocation/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-allocation/</guid>
+        <description>Request: mutation { createAllocation ( input: { allocation: { roundId: &amp;#34;3fb91ee2-eb13-4308-b4ca-1c968a6546a4&amp;#34; name: &amp;#34;Domestic Investors&amp;#34; opensOn: &amp;#34;2022-01-01&amp;#34; closesOn: &amp;#34;2022-03-31&amp;#34; } } ) { allocation { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createAllocation&amp;#34;: { &amp;#34;allocation&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;abb668d2-63d2-43dd-b495-b1e413a69427&amp;#34; } } } } An allocation is a grouping of distributions within a round that allows the issuer to distinguish groups of investors within a round, for example, domestic vs other, or tokenized vs non-tokenized.</description>
+      </item>
+      
+      <item>
+        <title>Introspection</title>
+        <link>https://api.vertalo.com/docs/appendix/introspection/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/introspection/</guid>
+        <description>The entirety of the Vertalo GraphQL schema is available for you to explore through the GraphiQL interactive tool described in the Getting Going section of the Introduction. The tool itself leverages a very powerful feature of GraphQL, called &amp;ldquo;introspection&amp;rdquo;, through which you can ask the schema for information on what queries, mutations, and subscriptions it supports. Here is a query you can utilize to perform this action:
+query IntrospectionQuery { __schema { queryType { name } mutationType { name } subscriptionType { name } types { .</description>
+      </item>
+      
+      <item>
+        <title>Multi-Tenancy</title>
+        <link>https://api.vertalo.com/docs/introduction/multi-tenancy/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/multi-tenancy/</guid>
+        <description>As a multi-tenant system, an investor has a single account in the Vertalo platform regardless of how many different vendors with which they may be engaged. For instance, an investor may hold shares with both Issuer A and Issuer B. From an investor perspective, the investor is a customer to each issuer but has only one account in the system. The challenge comes when allowing each vendor to maintain its own version of the investor&amp;rsquo;s details (name, address, etc.</description>
+      </item>
+      
+      <item>
+        <title>Request Distribution Issuance</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/request-distribution-issuance/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/request-distribution-issuance/</guid>
+        <description>Request: mutation { makeTaRequestDistributionIssuance ( input: { distributionId: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; } ) { taRequest { id stagedTransferId createdOn status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTaRequestDistributionIssuance&amp;#34;: { &amp;#34;taRequest&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;d2688715-c957-4125-b402-6337fe69adfe&amp;#34;, &amp;#34;stagedTransferId&amp;#34;: &amp;#34;cd8baf68-2f1e-4632-b3eb-701a4d85a1b8&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2023-07-20T22:26:36.247596+00:00&amp;#34; &amp;#34;status&amp;#34;: &amp;#34;pending&amp;#34;, } } } } In this example, the mutation formally commences the process of issuing shares to an investor based on a distribution ID to create a transfer request. (The transfer, in this case, is from treasury to the investor.</description>
+      </item>
+      
+      <item>
+        <title>Useful Queries</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/useful-queries/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/useful-queries/</guid>
+        <description>Query Securities Request: query { allSecurities { nodes { id holdingsBySecurityId { nodes { id investorId amount createdOn accountByInvestorId { id name email } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;allSecurities&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;6a93a168-31b6-4a67-b9f9-8cda51e5e6ba&amp;#34;, &amp;#34;holdingsBySecurityId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34;, &amp;#34;investorId&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;amount&amp;#34;: &amp;#34;100000.000000000000000000&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2021-12-16T22:05:46.253555+00:00&amp;#34;, &amp;#34;accountByInvestorId&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Bob Smith&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;bob.smith@example.com&amp;#34; } } ] } } ] } } } In this example, the query fetches all securities (and respective holdings) for which you are the listing ATS.</description>
+      </item>
+      
+      <item>
+        <title>Getting Going</title>
+        <link>https://api.vertalo.com/docs/introduction/getting-going/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/getting-going/</guid>
+        <description>Your starting point for exploring the Vertalo API is the Vertalo Sandbox. The Sandbox is a fully functioning version of our production environment and allows participants to model assets, rounds and other entities to investors in a safe and controlled manner. For an organization that is interested in leveraging the Vertalo API, the Sandbox also offers a way to explore and try out the API through an interactive interface. Follow these steps to access this environment:</description>
+      </item>
+      
+      <item>
+        <title>Invite Broker to Round</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/invite-broker/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/invite-broker/</guid>
+        <description>Request: mutation { createBrokerAllocation ( input: { brokerAllocation: { brokerId: &amp;#34;2bfdb931-d934-4b51-8226-b392f579cef2&amp;#34; roundId: &amp;#34;59671b88-9b68-428c-b2f5-c3ebe0cc705c&amp;#34; } } ) { brokerAllocation { id managedUnits invitationStatusByStatus { status } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createBrokerAllocation&amp;#34;: { &amp;#34;brokerAllocation&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;421737dc-3b00-47dc-b147-2f9c0db7c953&amp;#34;, &amp;#34;managedUnits&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;invitationStatusByStatus&amp;#34;: { &amp;#34;status&amp;#34;: &amp;#34;sent&amp;#34; } } } } } In this example, an issuer is syndicating the fulfillment of a specific round by creating what&amp;rsquo;s known as a broker allocation. This is effectively an invitation to a broker to participate in the fulfillment of that round.</description>
+      </item>
+      
+      <item>
+        <title>Request Direct Issuance</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/request-issuance/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/request-issuance/</guid>
+        <description>Request: mutation { makeTaRequestIssuance ( input: { securityId: &amp;#34;0994921c-647f-4809-823c-2cd20ac7646b&amp;#34; toAccountId: &amp;#34;ce47dc3e-10f0-4ce1-beb9-b74debb144ac&amp;#34; amount: &amp;#34;20000&amp;#34; costBasis: &amp;#34;5.00&amp;#34; issuanceDate: &amp;#34;2023-01-01&amp;#34; } ) { taRequest { id status createdOn } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTaRequestIssuance&amp;#34;: { &amp;#34;taRequest&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;740cffb4-ae5a-4256-8083-c9ecad4f6f94&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;pending&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2023-07-20T22:26:36.247596+00:00&amp;#34; } } } } Numeric field Usage amount The total number of units/shares costBasis The per unit/share price It may be the case that an issuer has an existing cap table based on the prior issuance of a security to a set of investors, that they then want to bring to the Vertalo platform.</description>
+      </item>
+      
+      <item>
+        <title>VSP Overview</title>
+        <link>https://api.vertalo.com/docs/appendix/vsp-overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/vsp-overview/</guid>
+        <description>The Vertalo Securities Protocol (VSP) is a standardized smart-contract architecture that gives private issuers flexibility in their offerings and tokenizations. Built upon a proprietary technology that Vertalo developed for its own STO in 2018, it can implement any trading-restriction policy from full lockup to free trading, and can be upgraded at any future date to change the restrictions.
+As a regulated entity in its capacity as a licensed transfer agent, Vertalo works to ensure the movement and custodying of digital securities (using VSP) in a regulatory compliant manner for the benefit of our clients.</description>
+      </item>
+      
+      <item>
+        <title>The Object Model</title>
+        <link>https://api.vertalo.com/docs/introduction/object-model/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/object-model/</guid>
+        <description>The Vertalo object model consists of the following major components:
+Users Accounts Assets Rounds Allocations Investors Distributions Securities Holdings As you peruse the API documentation in GraphiQL, you&amp;rsquo;ll see these objects appearing in root-level fieldnames, type names, and other areas of the API. The examples in this section represent a good starting point for your exploration of the Vertalo API.
+The basic pre-issuance object hierarchy is:
+Issuers (which manage) Assets (which contain) Rounds (which contain) Allocations (which contain) Investors (which hold) Distributions The basic post-issuance object hierarchy is:</description>
+      </item>
+      
+      <item>
+        <title>Partner Integrations</title>
+        <link>https://api.vertalo.com/docs/introduction/integrations/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/integrations/</guid>
+        <description>As a digital transfer agent, Vertalo sits at the intersection of a digital asset ecosystem that includes key partners providing the following services:
+KYC/AML Accreditation Document signing Payment Processing Trade order matching Custody/Escrow The Vertalo platform is integrated with partners in each of these categories. These integrations, however, are not available to issuers or brokers through the API as they require investor login. The platform enforces safeguards that prevent an issuer or broker from acting on behalf of an investor for certain actions and thereby ensuring investor protection.</description>
+      </item>
+      
+      <item>
+        <title>GraphQL/PostGraphile</title>
+        <link>https://api.vertalo.com/docs/introduction/postgraphile/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/postgraphile/</guid>
+        <description>The Vertalo GraphQL API is derived from a collection of PostgreSQL databases that underpin our platform. We also use an open-source framework called PostGraphile, which is able to interpret a PostgreSQL schema and then auto-generate a GraphQL schema from it. It is recommended that you gain some familiarity with PostGraphile in order to understand how the Vertalo API is created. The PostGraphile documentation provides a roadmap to what you&amp;rsquo;ll see in the Vertalo API.</description>
+      </item>
+      
+    
+  </channel>
+</rss>
