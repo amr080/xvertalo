@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asset Configuration on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/asset-configuration/</link>
+    <description>Recent content in Asset Configuration on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/asset-configuration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Create an Asset</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-asset/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-asset/</guid>
+        <description>Request: mutation { createAsset ( input: { asset: { name: &amp;#34;Example Asset #1&amp;#34; type: &amp;#34;Preferred Equity&amp;#34; authorizedTotal: &amp;#34;5000000&amp;#34; status: &amp;#34;Active&amp;#34; } } ) { asset { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createAsset&amp;#34;: { &amp;#34;asset&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;b29704fd-5613-4f16-b712-a942a126413b&amp;#34; } } } } Numeric field Usage authorizedTotal The total number of shares/units authorized for sale overall In this example, the mutation creates a new asset with the required properties. It also shows a return payload requested as part of the mutation.</description>
+      </item>
+      
+      <item>
+        <title>Create a Round</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-round/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-round/</guid>
+        <description>Request: mutation { makeRound ( input: { assetId: &amp;#34;b29704fd-5613-4f16-b712-a942a126413b&amp;#34; name: &amp;#34;Series A&amp;#34; opensOn: &amp;#34;2022-01-01&amp;#34; closesOn: &amp;#34;2022-03-31&amp;#34; total: &amp;#34;2000000&amp;#34; price: &amp;#34;1.00&amp;#34; status: &amp;#34;Active&amp;#34; termsUrl: &amp;#34;https://dataroom.example.com&amp;#34; } ) { round { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeRound&amp;#34;: { &amp;#34;round&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;3fb91ee2-eb13-4308-b4ca-1c968a6546a4&amp;#34; } } } } Numeric field Usage total The total number of shares/units authorized for sale in the round price The price per share/unit expressed in USD In this example, the mutation creates a new round that is associated with the asset created in the previous example.</description>
+      </item>
+      
+      <item>
+        <title>Create a Tranche (Debt)</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-tranche/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-tranche/</guid>
+        <description>Request: mutation { makeTranche ( input: { assetId: &amp;#34;08baabd1-39ea-49be-9888-7755afe8b94a&amp;#34; name: &amp;#34;Tranche - AAA&amp;#34; opensOn: &amp;#34;2023-08-01&amp;#34; closesOn: &amp;#34;2023-12-31&amp;#34; total: &amp;#34;70000000&amp;#34; price: &amp;#34;1.00&amp;#34; status: &amp;#34;Active&amp;#34; termsUrl: &amp;#34;https://dataroom.example.com&amp;#34; coupon: &amp;#34;6.25&amp;#34; term: &amp;#34;3&amp;#34; } ) { round { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTranche&amp;#34;: { &amp;#34;round&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;a0471b97-5265-4fad-affa-f51637dfafe2&amp;#34; } } } } Numeric field Usage total The total number of shares/units authorized for sale in the tranche price The price per share/unit expressed in USD coupon The % return/yield on the investment term The duration of the investment If the asset in question is a debt instrument (a bond, for example), you will need to employ the makeTranche mutation rather than the makeRound mutation from the previous section due to the need for additional information (coupon and term).</description>
+      </item>
+      
+      <item>
+        <title>Create an Allocation</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/create-allocation/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/create-allocation/</guid>
+        <description>Request: mutation { createAllocation ( input: { allocation: { roundId: &amp;#34;3fb91ee2-eb13-4308-b4ca-1c968a6546a4&amp;#34; name: &amp;#34;Domestic Investors&amp;#34; opensOn: &amp;#34;2022-01-01&amp;#34; closesOn: &amp;#34;2022-03-31&amp;#34; } } ) { allocation { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createAllocation&amp;#34;: { &amp;#34;allocation&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;abb668d2-63d2-43dd-b495-b1e413a69427&amp;#34; } } } } An allocation is a grouping of distributions within a round that allows the issuer to distinguish groups of investors within a round, for example, domestic vs other, or tokenized vs non-tokenized.</description>
+      </item>
+      
+      <item>
+        <title>Invite Broker to Round</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/invite-broker/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/invite-broker/</guid>
+        <description>Request: mutation { createBrokerAllocation ( input: { brokerAllocation: { brokerId: &amp;#34;2bfdb931-d934-4b51-8226-b392f579cef2&amp;#34; roundId: &amp;#34;59671b88-9b68-428c-b2f5-c3ebe0cc705c&amp;#34; } } ) { brokerAllocation { id managedUnits invitationStatusByStatus { status } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createBrokerAllocation&amp;#34;: { &amp;#34;brokerAllocation&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;421737dc-3b00-47dc-b147-2f9c0db7c953&amp;#34;, &amp;#34;managedUnits&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;invitationStatusByStatus&amp;#34;: { &amp;#34;status&amp;#34;: &amp;#34;sent&amp;#34; } } } } } In this example, an issuer is syndicating the fulfillment of a specific round by creating what&amp;rsquo;s known as a broker allocation. This is effectively an invitation to a broker to participate in the fulfillment of that round.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

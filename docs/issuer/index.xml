@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 Issuer Actions on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/</link>
+    <description>Recent content in 2 Issuer Actions on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/issuer/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/overview/</guid>
+        <description>The actions for an issuer in a primary issuance context follow a typical ordering:
+Configure assets/rounds/allocations Create customers Record investment interest Record receipt of funds Issue securities Tokenize securities (optional) The sections of this chapter are laid out to follow this sequence.
+Syndication An issuer may choose to syndicate the fulfillment of a round by inviting brokers to participate. In this circumstance, the broker is effectively a quasi-issuer for that round and can perform certain similar functions to that of an issuer, specifically, creating allocations and distributions.</description>
+      </item>
+      
+      <item>
+        <title>Asset Configuration</title>
+        <link>https://api.vertalo.com/docs/issuer/asset-configuration/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/asset-configuration/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Investor Setup</title>
+        <link>https://api.vertalo.com/docs/issuer/investor-setup/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/investor-setup/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Primary Issuance</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Tokenization</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Document Upload</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/</guid>
+        <description></description>
+      </item>
+      
+    
+  </channel>
+</rss>

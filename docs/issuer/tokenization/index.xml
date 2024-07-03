@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tokenization on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/tokenization/</link>
+    <description>Recent content in Tokenization on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/tokenization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Initialize a Token</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/initialize-token/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/initialize-token/</guid>
+        <description>Request: mutation { makeToken ( input: { _tokenId: &amp;#34;7ae8c3b7-43a4-4ee3-99c8-812e101d3859&amp;#34; _chain: &amp;#34;ethereum-vertalo&amp;#34; _name: &amp;#34;Series A Token&amp;#34; _symbol: &amp;#34;SERIESA&amp;#34; } ) { token { contractsByTokenId { nodes { id } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeToken&amp;#34;: { &amp;#34;token&amp;#34;: { &amp;#34;contractsByTokenId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;48e2486f-a988-4f92-9794-4df831c03879&amp;#34; } ] } } } } } In this example, the mutation initializes a new token for a round. There is a one-to-one relationship between round and token, with a token ID being automatically assigned at the creation of a round.</description>
+      </item>
+      
+      <item>
+        <title>Deploy a Contract</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/deploy-contract/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/deploy-contract/</guid>
+        <description>Request: mutation { deployContract ( input: { _contractId: &amp;#34;48e2486f-a988-4f92-9794-4df831c03879&amp;#34; } ) { contract { contractAddress } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;deployContract&amp;#34;: { &amp;#34;contract&amp;#34;: { &amp;#34;contractAddress&amp;#34;: &amp;#34;0x6537d77941ef111b4c853d38a03fe9478bc36d41&amp;#34; } } } } In this example, the mutation deploys a smart contract (associated to a token) to the blockchain and returns the on-chain contract address in the payload. Note that the contract ID returned from the previous example of the initialization of a token is used in the deployment of the contract.</description>
+      </item>
+      
+      <item>
+        <title>Mint Tokens</title>
+        <link>https://api.vertalo.com/docs/issuer/tokenization/mint-token/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/tokenization/mint-token/</guid>
+        <description>Request: mutation { tokenizeHoldings ( input: { holdingIds: [ &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34; ] } ) { holdings { investorId issuedOn holdingBlockchainAddressesByHoldingId { nodes { blockchainAddressId blockchainAddressByBlockchainAddressId { address } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;tokenizeHoldings&amp;#34;: { &amp;#34;holdings&amp;#34;: [ { &amp;#34;investorId&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;issuedOn&amp;#34;: &amp;#34;2021-12-16T22:05:46.253555+00:00&amp;#34;, &amp;#34;holdingBlockchainAddressesByHoldingId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;blockchainAddressId&amp;#34;: &amp;#34;28978c2d-d5e6-498c-a462-fd19b803b8d2&amp;#34;, &amp;#34;blockchainAddressByBlockchainAddressId&amp;#34;: { &amp;#34;address&amp;#34;: &amp;#34;0x99032ac273e339e3fd26e27d26146c0fe668b927&amp;#34; } } ] } } ] } } } In this example, the mutation mints tokens to investor wallets based on their holding IDs.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6 Access via API Key on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/api-key/</link>
+    <description>Recent content in 6 Access via API Key on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/api-key/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/api-key/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/overview/</guid>
+        <description>All of the concepts, capabilities, and examples described previously in the API primer are available programmatically via API credentials. Vertalo will issue clients testing and production credentials (a client ID and client secret) for server-side programmatic access to their account(s). The process of using the credentials to claim the required access tokens and issue queries and mutations to the Vertalo API is described in the sections that follow. We strongly encourage you to use your regular login credentials to make use of Vertalo&amp;rsquo;s user portal and interactive GraphiQL interface (described in detail above in this document), in addition to your testing API credentials, to test your queries in your sandbox environment before implementing them in production.</description>
+      </item>
+      
+      <item>
+        <title>Authentication</title>
+        <link>https://api.vertalo.com/docs/api-key/authentication/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/authentication/</guid>
+        <description>/authenticate/token/login Once you&amp;rsquo;ve been issued a client ID and client secret, you will be able to generate a bearer token which you will then use to associate your access with a specific role that has been configured for your account.
+Request:
+curl &amp;#39;https://sandbox.vertalo.com/authenticate/token/login?client_id=&amp;lt;client ID&amp;gt;&amp;amp;client_secret=&amp;lt;client secret&amp;gt;&amp;#39; Response:
+{ &amp;#34;token&amp;#34;: { &amp;#34;token_type&amp;#34;: &amp;#34;Bearer&amp;#34;, &amp;#34;access_token&amp;#34;: &amp;#34;&amp;lt;token&amp;gt;&amp;#34; }, &amp;#34;roles&amp;#34;: { &amp;#34;data&amp;#34;: [ { &amp;#34;last_name&amp;#34;: &amp;#34;example&amp;#34;, &amp;#34;user_role&amp;#34;: &amp;#34;account_admin&amp;#34;, &amp;#34;account_type&amp;#34;: &amp;#34;broker&amp;#34;, &amp;#34;account_name&amp;#34;: &amp;#34;Example&amp;#34;, &amp;#34;user_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;users_account_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;first_name&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;account_id&amp;#34;: &amp;#34;&amp;lt;UUID&amp;gt;&amp;#34;, &amp;#34;slug&amp;#34;: &amp;#34;example&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;admin@example.</description>
+      </item>
+      
+      <item>
+        <title>Calling GraphQL</title>
+        <link>https://api.vertalo.com/docs/api-key/calling-graphql/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/calling-graphql/</guid>
+        <description>/token/api/v2/graphql Using the response from the /token/role endpoint, use the value of the access_token field to construct a request to a single /token/api/v2/graphql endpoint through which you issue properly formed GraphQL queries and mutations to the Vertalo API.
+Request:
+curl --location --request POST &amp;#39;https://sandbox.vertalo.com/token/api/v2/graphql&amp;#39; --header &amp;#39;Authorization: Bearer &amp;lt;access_token&amp;gt;&amp;#39; --header &amp;#39;Content-Type: application/json&amp;#39; --data-raw &amp;#39;{&amp;#34;query&amp;#34;: &amp;#34;query {\n allAssets {\n nodes {\n name\n type\n status\n authorizedTotal\n}\n}\n}&amp;#34;, &amp;#34;variables&amp;#34;:{}}&amp;#39; Response:
+{ &amp;#34;data&amp;#34;: { &amp;#34;allAssets&amp;#34;: { &amp;#34;nodes&amp;#34;: [{ &amp;#34;name&amp;#34;: &amp;#34;Example Preferred Equity&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;Preferred Equity&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;active&amp;#34;, &amp;#34;authorizedTotal&amp;#34;: &amp;#34;5000000&amp;#34; }] } } } </description>
+      </item>
+      
+    
+  </channel>
+</rss>

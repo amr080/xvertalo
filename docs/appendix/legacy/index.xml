@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Legacy API Calls on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/appendix/legacy/</link>
+    <description>Recent content in Legacy API Calls on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/appendix/legacy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/appendix/legacy/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/legacy/overview/</guid>
+        <description>As the Vertalo platform evolves, certain operations may change. In order to maintain backward compatability, these legacy operations (and the API call(s) associated with them) will remain in place for a period of time to be determined by Vertalo, and then deprecated. Prior to deprecation, those currently relying on these operations should use the following migration strategy:
+Update your code to the newer version of the operation. Deploy and test your updated code (in the your testing environment) using your Vertalo sandbox API keys, carefully verifying the updated operations using the Vertalo sandbox portal where appropriate.</description>
+      </item>
+      
+      <item>
+        <title>Issue Distributions</title>
+        <link>https://api.vertalo.com/docs/appendix/legacy/issue-distributions/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/legacy/issue-distributions/</guid>
+        <description>Request: mutation { issueDistributions ( input: { distributionIds: [ &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; ] } ) { issuanceEvents { holdingId } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;issueDistributions&amp;#34;: { &amp;#34;issuanceEvents&amp;#34;: [ { &amp;#34;holdingId&amp;#34;: &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34; } ] } } } In order to maintain backward compatability with the previous method of issuing distributions, the issueDistributions mutation will remain in place for a period of time to be determined. This mutation will eventually be fully deprecated, and those currently using it will have to migrate to the new method described in the section Request Distribution Issuance under Issuer Actions &amp;raquo; Primary Issuance.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

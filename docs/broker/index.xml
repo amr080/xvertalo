@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 Broker Actions on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/broker/</link>
+    <description>Recent content in 3 Broker Actions on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/broker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/broker/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/overview/</guid>
+        <description>The Vertalo platform offers support for organizations that assist issuers with their digital securities offerings, including:
+Broker-Dealers Registered Investment Advisors Capital Advisors Deal Packaging Consultants This type of organization is generically referred to as a &amp;ldquo;broker&amp;rdquo; in the Vertalo system, and there are specific capabilities associated with this role. If you fall within the broker category you may use the API to make use of these capabilities. Please refer to the Roles section of the Introduction for additional detail on broker privileges.</description>
+      </item>
+      
+      <item>
+        <title>Create an Issuer</title>
+        <link>https://api.vertalo.com/docs/broker/create-issuer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/create-issuer/</guid>
+        <description>Request: mutation { makeIssuerAccount ( input: { companyName: &amp;#34;Example Issuer&amp;#34; companyEmail: &amp;#34;mary.johnson@example.com&amp;#34; } ) { account { id type } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeIssuerAccount&amp;#34;: { &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;a68a3ac2-5110-4207-9bad-e9acbdec6f1a&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;issuer&amp;#34; } } } } In this example, the mutation creates a new issuer. The ID of the newly created issuer is returned in the payload. You then have the option to switch to this issuer role and perform actions as the issuer.</description>
+      </item>
+      
+      <item>
+        <title>Accept Issuer Invitation</title>
+        <link>https://api.vertalo.com/docs/broker/accept-invite/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/accept-invite/</guid>
+        <description>Syndication As mentioned in the overview to this chapter, an issuer may choose to syndicate the fulfillment of a round by inviting brokers to participate. This is only possible in cases where the broker has created the issuer, either through the Vertalo portal or programmatically via the API (as described in the previous section). The issuer then (and only then) has the option to invite the broker to a round they have previously created.</description>
+      </item>
+      
+      <item>
+        <title>Create a Delegate</title>
+        <link>https://api.vertalo.com/docs/broker/create-delegate/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/create-delegate/</guid>
+        <description>Request: mutation { makeDelegate ( input: { firstName: &amp;#34;Some&amp;#34; lastName: &amp;#34;Delegate&amp;#34; email: &amp;#34;some.delegate@example.com&amp;#34; role: &amp;#34;account_admin&amp;#34; } ) { usersAccount { userId role status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeDelegate&amp;#34;: { &amp;#34;usersAccount&amp;#34;: { &amp;#34;userId&amp;#34;: &amp;#34;f24dbbea-742c-4513-96e9-6b2f4edadcc3&amp;#34;, &amp;#34;role&amp;#34;: &amp;#34;account_admin&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;active&amp;#34; } } } } In this example, the migration adds a delegate to the account role under whose authority you are operating. Possible values for the &amp;ldquo;role&amp;rdquo; field in the mutation are:</description>
+      </item>
+      
+    
+  </channel>
+</rss>

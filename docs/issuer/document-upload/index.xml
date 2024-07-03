@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Document Upload on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/document-upload/</link>
+    <description>Recent content in Document Upload on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/document-upload/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Create a Security Document</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/security-document/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/security-document/</guid>
+        <description>Request: mutation { makeSecurityDocument( input: { name: &amp;#34;PPM&amp;#34;, extension: &amp;#34;pdf&amp;#34;, securityId: &amp;#34;5f30ff94-8bb7-490e-be24-8b935d786b93&amp;#34;, shareWith: [] }) { uploadInfo securityDocumentId accountDocumentId documentId } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeSecurityDocument&amp;#34;: { &amp;#34;uploadInfo&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://s3.amazonaws.com/documents.vertalo&amp;#34;, &amp;#34;fields&amp;#34;: { &amp;#34;key&amp;#34;: &amp;#34;example/ed0b1825-b86c-4b0f-a2a0-2aff4eb18d34.pdf&amp;#34;, &amp;#34;Content-Type&amp;#34;: &amp;#34;application/pdf&amp;#34;, &amp;#34;bucket&amp;#34;: &amp;#34;documents.vertalo&amp;#34;, &amp;#34;X-Amz-Algorithm&amp;#34;: &amp;#34;AWS4-HMAC-SHA256&amp;#34;, &amp;#34;X-Amz-Credential&amp;#34;: &amp;#34;...2JXETTCGRODP/20220212/us-east-1/s3/aws4_request&amp;#34;, &amp;#34;X-Amz-Date&amp;#34;: &amp;#34;20220212T164558Z&amp;#34;, &amp;#34;X-Amz-Security-Token&amp;#34;: &amp;#34;IQoJb3JpZ2luX2VjEBQaCXVzLWVhc3QtMiJGME...p5kLZtLsrlro2vJQ==&amp;#34;, &amp;#34;Policy&amp;#34;: &amp;#34;eyJleHBpcmF0aW9uIjoiMjAyMi0wMi0xMlQxNzo0NTo1OFoiLCJjb25...szZHJBVRPT0ifV19&amp;#34;, &amp;#34;X-Amz-Signature&amp;#34;: &amp;#34;652018d81b2c8c48fc1585f3d1a...ed21e4aa2d24ac55cefdb8b0be2&amp;#34; } }, &amp;#34;securityDocumentId&amp;#34;: &amp;#34;50846d44-537e-4e80-9ae9-1059b6d2195a&amp;#34;, &amp;#34;accountDocumentId&amp;#34;: null, &amp;#34;documentId&amp;#34;: &amp;#34;ed0b1825-b86c-4b0f-a2a0-2aff4eb18d34&amp;#34; } } } Input parameters:
+name: file name extension: file extension without leading &amp;ldquo;.</description>
+      </item>
+      
+      <item>
+        <title>Create a Holding Document</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/holding-docucment/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/holding-docucment/</guid>
+        <description>Request: mutation { makeHoldingDocument( input: { name: &amp;#34;PPM&amp;#34;, extension: &amp;#34;pdf&amp;#34;, holdingId: &amp;#34;71ac4fd6-2877-46bd-a8b9-f76bca6d6dc4&amp;#34;, shareWith: [&amp;#34;investor&amp;#34;] }) { uploadInfo holdingDocumentId accountDocumentId documentId } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeHoldingDocument&amp;#34;: { &amp;#34;uploadInfo&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://s3.amazonaws.com/documents.vertalo&amp;#34;, &amp;#34;fields&amp;#34;: { &amp;#34;key&amp;#34;: &amp;#34;example/1c8e4025-2fbe-40ec-ba18-b910fb4db2f6.pdf&amp;#34;, &amp;#34;Content-Type&amp;#34;: &amp;#34;application/pdf&amp;#34;, &amp;#34;bucket&amp;#34;: &amp;#34;documents.vertalo&amp;#34;, &amp;#34;X-Amz-Algorithm&amp;#34;: &amp;#34;AWS4-HMAC-SHA256&amp;#34;, &amp;#34;X-Amz-Credential&amp;#34;: &amp;#34;...JXETTCGRODP/20220212/us-east-1/s3/aws4_request&amp;#34;, &amp;#34;X-Amz-Date&amp;#34;: &amp;#34;20220212T165022Z&amp;#34;, &amp;#34;X-Amz-Security-Token&amp;#34;: &amp;#34;IQoJb3JpZ2luX2VjEBQaCXVzLWVhkyl...g9Pp5kLZtLsrlro2vJQ==&amp;#34;, &amp;#34;Policy&amp;#34;: &amp;#34;eyJleHBpcmF0aW9uIjoiMjAyMi0wMi0xMlQxNzo...WtMWnRMc3Jscm8ydkpRPT0ifV19&amp;#34;, &amp;#34;X-Amz-Signature&amp;#34;: &amp;#34;ebe00453aded2a1c20bdafb...2129eddf5f42a50e45e77130aeeb1c0&amp;#34; } }, &amp;#34;holdingDocumentId&amp;#34;: &amp;#34;75718a2b-81e5-4655-8c37-7a5f47a4be45&amp;#34;, &amp;#34;accountDocumentId&amp;#34;: null, &amp;#34;documentId&amp;#34;: &amp;#34;1c8e4025-2fbe-40ec-ba18-b910fb4db2f6&amp;#34; } } } Input parameters:
+name: file name extension: file extension without leading &amp;ldquo;.</description>
+      </item>
+      
+      <item>
+        <title>Example Upload Code</title>
+        <link>https://api.vertalo.com/docs/issuer/document-upload/upload-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/document-upload/upload-example/</guid>
+        <description>/** * Upload file to S3 with previously received pre-signed POST data. * @param presignedPostData * @param file * @returns {Promise&amp;lt;any&amp;gt;} */ const uploadFileToS3 = (presignedPostData, file) =&amp;gt; { return new Promise((resolve, reject) =&amp;gt; { const formData = new FormData(); Object.keys(presignedPostData.fields).forEach(key =&amp;gt; { formData.append(key, presignedPostData.fields[key]); }); // Actual file has to be appended last. formData.append(&amp;#34;file&amp;#34;, file); const xhr = new XMLHttpRequest(); xhr.open(&amp;#34;POST&amp;#34;, presignedPostData.url, true); xhr.send(formData); xhr.onload = function() { this.status === 204 ?</description>
+      </item>
+      
+    
+  </channel>
+</rss>

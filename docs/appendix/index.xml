@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Appendix on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/appendix/</link>
+    <description>Recent content in Appendix on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/appendix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Legacy API Calls</title>
+        <link>https://api.vertalo.com/docs/appendix/legacy/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/legacy/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Conditions &amp; Filters</title>
+        <link>https://api.vertalo.com/docs/appendix/conditions-filters/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/conditions-filters/</guid>
+        <description>In previous examples, you will have noticed the use of the condition keyword at various points in the query, which provides a rudimentary means to filter for specific values. The Vertalo API also supports the filter keyword, which provides even more advanced capabilities.
+Request: query { allAccounts (condition: {type: &amp;#34;investor&amp;#34;, email: &amp;#34;bob.smith@example.com&amp;#34;}) { nodes { id name email distributionsByInvestorId { nodes { amount allocationByAllocationId { name roundByRoundId { name assetByAssetId { name } } } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;allAccounts&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Bob Smith&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;bob.</description>
+      </item>
+      
+      <item>
+        <title>Error Codes</title>
+        <link>https://api.vertalo.com/docs/appendix/error-codes/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/error-codes/</guid>
+        <description>Below is a list of current error codes produced by the Vertalo API.
+Code Description 1 Permission denied. 100 Invalid token name. 101 Invalid token symbol. 130 Token information cannot be edited once deployed. 210 Invalid blockchain registration method. 211 Invalid blockchain chain. 320 Allocation status cannot be edited once the issuance process begins. 330 Allocations must be closed in order to issue. 331 All holdings must be closed or locked before the allocation can close.</description>
+      </item>
+      
+      <item>
+        <title>Introspection</title>
+        <link>https://api.vertalo.com/docs/appendix/introspection/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/introspection/</guid>
+        <description>The entirety of the Vertalo GraphQL schema is available for you to explore through the GraphiQL interactive tool described in the Getting Going section of the Introduction. The tool itself leverages a very powerful feature of GraphQL, called &amp;ldquo;introspection&amp;rdquo;, through which you can ask the schema for information on what queries, mutations, and subscriptions it supports. Here is a query you can utilize to perform this action:
+query IntrospectionQuery { __schema { queryType { name } mutationType { name } subscriptionType { name } types { .</description>
+      </item>
+      
+      <item>
+        <title>VSP Overview</title>
+        <link>https://api.vertalo.com/docs/appendix/vsp-overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/vsp-overview/</guid>
+        <description>The Vertalo Securities Protocol (VSP) is a standardized smart-contract architecture that gives private issuers flexibility in their offerings and tokenizations. Built upon a proprietary technology that Vertalo developed for its own STO in 2018, it can implement any trading-restriction policy from full lockup to free trading, and can be upgraded at any future date to change the restrictions.
+As a regulated entity in its capacity as a licensed transfer agent, Vertalo works to ensure the movement and custodying of digital securities (using VSP) in a regulatory compliant manner for the benefit of our clients.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5 Custodian Actions on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/custodian/</link>
+    <description>Recent content in 5 Custodian Actions on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/custodian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/custodian/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/overview/</guid>
+        <description>Custodian actions may be utilized by different parties depending on the requirements of their integration with the Vertalo platform. For instance, registered/qualified custodians may need to interact with an issuer&amp;rsquo;s cap tables in order to request the transfer of holdings from an investor into an omnibus account in the name of the custodian. The same applies for registered/qualified BD/ATS&amp;rsquo;s where the BD/ATS is permitted to hold an investor&amp;rsquo;s securities in street-name for the purpose of trading.</description>
+      </item>
+      
+      <item>
+        <title>Bulk Deposit</title>
+        <link>https://api.vertalo.com/docs/custodian/bulk-deposit/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/bulk-deposit/</guid>
+        <description>Request: mutation { bulkDeposit ( input : { securityId: &amp;#34;&amp;#34; idempotencyId: &amp;#34;&amp;#34; deposit: [ { idempotencyId: &amp;#34;&amp;#34; depositAddressId: &amp;#34;&amp;#34; investorId: &amp;#34;&amp;#34; externalInvestorId: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; holdings: [ { id: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } ] signature: { status: &amp;#34;&amp;#34; signature: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; } investorInformation: { name: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } parties: [ { firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] } ] } tags: [ { id: &amp;#34;&amp;#34; data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } ] fee: { currency: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } } ] } ) { id accountId securityId requestId type status createdOn executedOn requestByRequestId { data } } } Numeric field Usage deposit.</description>
+      </item>
+      
+      <item>
+        <title>Querying Requests</title>
+        <link>https://api.vertalo.com/docs/custodian/all-requests/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/all-requests/</guid>
+        <description>Request: query { allRequests { nodes { id accountId data type createdOn stagedTransfersByRequestId { nodes { id accountId securityId type status webhookId data createdOn executedOn } } } } } In this example, the query returns ALL requests submitted by the custodian using the bulkDeposit mutation documented in this chapter. Standard GraphQL conditions/filters may be applied to this type of query in order limit the size of the result set. See the Appendix for more details.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

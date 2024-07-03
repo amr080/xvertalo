@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Investor Setup on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/investor-setup/</link>
+    <description>Recent content in Investor Setup on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/investor-setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Setup Customer Information</title>
+        <link>https://api.vertalo.com/docs/issuer/investor-setup/setup-customer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/investor-setup/setup-customer/</guid>
+        <description>Request: mutation { setupCustomer ( input: { name: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; accountSetupData: { type: &amp;#34;&amp;#34; formationDate: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] parties: [ { email: &amp;#34;&amp;#34; firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; dateOfBirth: &amp;#34;&amp;#34; usCitizen: true isPrimary: true allowLogin: true addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] } ] } } ) { customer { id investorId } } } The example above shows the full extent of the setupCustomer mutation, through which you submit details for a customer (investor).</description>
+      </item>
+      
+      <item>
+        <title>Assign a Wallet Address</title>
+        <link>https://api.vertalo.com/docs/issuer/investor-setup/assign-wallet/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/investor-setup/assign-wallet/</guid>
+        <description>Request: mutation { makeExternalBlockchainAddress ( input: { address: &amp;#34;0x71C7656EC7ab88b098defB751B7401B5f6d8976F&amp;#34; chain: &amp;#34;ethereum-mainnet&amp;#34; investorId: &amp;#34;a928056c-d33e-4960-8796-bf3c2af86b77&amp;#34; } ) { blockchainAddress { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeExternalBlockchainAddress&amp;#34;: { &amp;#34;blockchainAddress&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;af495a87-4f1f-4694-ab57-69a3cbcb30de&amp;#34; } } } } In this example, a blockchain wallet address is assigned to an investor. The assumption is that an investor has created a self-sovereign wallet on a blockchain supported by Vertalo, and then provided it to the vendor who then passes it through to the Vertalo system.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

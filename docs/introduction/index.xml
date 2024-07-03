@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 Introduction on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/introduction/</link>
+    <description>Recent content in 1 Introduction on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Welcome!</title>
+        <link>https://api.vertalo.com/docs/introduction/welcome/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/welcome/</guid>
+        <description>The Vertalo platform is a modern, blockchain-aware architecture that supports many functions, including:
+Digital asset configuration and management Investor onboarding (with KYC/AML, accreditation, document signing) Payment processing Cap table management Securities issuance Tokenization ATS integration General transfer agency services As an &amp;ldquo;integration first&amp;rdquo; company, Vertalo has designed its platform in an open and flexible way. This makes it possible for our partners to integrate with our platform through the Vertalo API when and where it&amp;rsquo;s needed.</description>
+      </item>
+      
+      <item>
+        <title>Roles</title>
+        <link>https://api.vertalo.com/docs/introduction/roles/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/roles/</guid>
+        <description>It&amp;rsquo;s important that you understand the basic Vertalo access control model and how your API access fits within it. A central part of the Vertalo access control model is the concept of roles. The following roles are currently supported:
+Role Description System Privileges Issuer A legal entity that registers and sells securities, with the purpose of generating income to fund operations. Create assets, rounds, allocations, distributions; manage investors; issue and tokenize holdings Broker A legal entity that assists with the distribution of an issuer&amp;rsquo;s offerings to investors, including broker-dealers, registered investment advisors, capital advisors.</description>
+      </item>
+      
+      <item>
+        <title>Accounts &amp; Users</title>
+        <link>https://api.vertalo.com/docs/introduction/accounts-users/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/accounts-users/</guid>
+        <description>There is a distinction between accounts and users in the Vertalo system. An account defines an entity in the system to which a single role is assigned (for instance, the issuer role). One or more users are then assigned as a delegate to the account and these users exercise the rights that the role allows. So in effect, an account is a collection of privileges granted to an entity.
+Delegation The delegation model described above allows for a one-to-many relationship between account and users, and gives you a great deal of flexibility as to how to manage access to the accounts you control.</description>
+      </item>
+      
+      <item>
+        <title>Multi-Tenancy</title>
+        <link>https://api.vertalo.com/docs/introduction/multi-tenancy/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/multi-tenancy/</guid>
+        <description>As a multi-tenant system, an investor has a single account in the Vertalo platform regardless of how many different vendors with which they may be engaged. For instance, an investor may hold shares with both Issuer A and Issuer B. From an investor perspective, the investor is a customer to each issuer but has only one account in the system. The challenge comes when allowing each vendor to maintain its own version of the investor&amp;rsquo;s details (name, address, etc.</description>
+      </item>
+      
+      <item>
+        <title>Getting Going</title>
+        <link>https://api.vertalo.com/docs/introduction/getting-going/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/getting-going/</guid>
+        <description>Your starting point for exploring the Vertalo API is the Vertalo Sandbox. The Sandbox is a fully functioning version of our production environment and allows participants to model assets, rounds and other entities to investors in a safe and controlled manner. For an organization that is interested in leveraging the Vertalo API, the Sandbox also offers a way to explore and try out the API through an interactive interface. Follow these steps to access this environment:</description>
+      </item>
+      
+      <item>
+        <title>The Object Model</title>
+        <link>https://api.vertalo.com/docs/introduction/object-model/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/object-model/</guid>
+        <description>The Vertalo object model consists of the following major components:
+Users Accounts Assets Rounds Allocations Investors Distributions Securities Holdings As you peruse the API documentation in GraphiQL, you&amp;rsquo;ll see these objects appearing in root-level fieldnames, type names, and other areas of the API. The examples in this section represent a good starting point for your exploration of the Vertalo API.
+The basic pre-issuance object hierarchy is:
+Issuers (which manage) Assets (which contain) Rounds (which contain) Allocations (which contain) Investors (which hold) Distributions The basic post-issuance object hierarchy is:</description>
+      </item>
+      
+      <item>
+        <title>Partner Integrations</title>
+        <link>https://api.vertalo.com/docs/introduction/integrations/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/integrations/</guid>
+        <description>As a digital transfer agent, Vertalo sits at the intersection of a digital asset ecosystem that includes key partners providing the following services:
+KYC/AML Accreditation Document signing Payment Processing Trade order matching Custody/Escrow The Vertalo platform is integrated with partners in each of these categories. These integrations, however, are not available to issuers or brokers through the API as they require investor login. The platform enforces safeguards that prevent an issuer or broker from acting on behalf of an investor for certain actions and thereby ensuring investor protection.</description>
+      </item>
+      
+      <item>
+        <title>GraphQL/PostGraphile</title>
+        <link>https://api.vertalo.com/docs/introduction/postgraphile/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/postgraphile/</guid>
+        <description>The Vertalo GraphQL API is derived from a collection of PostgreSQL databases that underpin our platform. We also use an open-source framework called PostGraphile, which is able to interpret a PostgreSQL schema and then auto-generate a GraphQL schema from it. It is recommended that you gain some familiarity with PostGraphile in order to understand how the Vertalo API is created. The PostGraphile documentation provides a roadmap to what you&amp;rsquo;ll see in the Vertalo API.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

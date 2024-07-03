@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>4 ATS Actions on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/ats-exchange/</link>
+    <description>Recent content in 4 ATS Actions on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/ats-exchange/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/overview/</guid>
+        <description>ATS/Exchange integrations are standardized through an API derived from the Vertalo GraphQL schema. Because of the high compliance requirements/costs associated with post-issuance trading and transfer, the goal of the Vertalo API is designed to make it as easy as possible to convey data between systems in order to maximize consistency. While the Vertalo platform uses a transaction-based architecture under the hood, we do not currently expose this to the API user and translate trading and transfer calls to transactions as needed.</description>
+      </item>
+      
+      <item>
+        <title>Create an Investor</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/create-investor/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/create-investor/</guid>
+        <description>Request: mutation { makeInvestor( input: { name: &amp;#34;John Jones&amp;#34; email: &amp;#34;john.jones@example.com&amp;#34; } ) { account { id } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeInvestor&amp;#34;: { &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;9452007f-429c-478d-92f2-096b8e32b829&amp;#34; } } } } In this example, the mutation creates a new investor. This makes it possible for an ATS to pre-populate investors on the Vertalo platform prior to trading in order create efficiencies when trading eventually occurs. This is not a requirement, however, as new investors (those not already on the Vertalo platform) can be automatically created when trades are recorded.</description>
+      </item>
+      
+      <item>
+        <title>Batch Transfer</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/batch-transfer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/batch-transfer/</guid>
+        <description>Request: mutation { batchTransfer ( input: { idempotencyId: &amp;#34;&amp;#34; transfer: [ { idempotencyId: &amp;#34;&amp;#34; investorId: &amp;#34;&amp;#34; securityId: &amp;#34;&amp;#34; usdPrice: &amp;#34;&amp;#34; transferPrice: { currency: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } holdings: [ { id: &amp;#34;&amp;#34; amount: &amp;#34;&amp;#34; } ] signature: { status: &amp;#34;&amp;#34; signature: &amp;#34;&amp;#34; date: &amp;#34;&amp;#34; } investorInformation: { name: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] parties: [ { firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; address: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; } ] } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } to: { id: &amp;#34;&amp;#34; email: &amp;#34;&amp;#34; name: &amp;#34;&amp;#34; jurisdiction: &amp;#34;&amp;#34; accountSetupData: { type: &amp;#34;&amp;#34; formationDate: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] parties: [ { email: &amp;#34;&amp;#34; firstName: &amp;#34;&amp;#34; lastName: &amp;#34;&amp;#34; taxId: &amp;#34;&amp;#34; dateOfBirth: &amp;#34;&amp;#34; usCitizen: true isPrimary: true allowLogin: true addresses: [ { lineOne: &amp;#34;&amp;#34; lineTwo: &amp;#34;&amp;#34; lineThree: &amp;#34;&amp;#34; lineFour: &amp;#34;&amp;#34; city: &amp;#34;&amp;#34; province: &amp;#34;&amp;#34; postalCode: &amp;#34;&amp;#34; country: &amp;#34;&amp;#34; type: &amp;#34;&amp;#34; } ] } ] } } tags: [ { id: &amp;#34;&amp;#34; data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } } ] data: { field1: &amp;#34;&amp;#34; field2: &amp;#34;&amp;#34; } matchedOn: &amp;#34;&amp;#34; settledOn: &amp;#34;&amp;#34; } ] } ) { id requestId type status createdOn executedOn requestByRequestId { data } } } Numeric field Usage transfer.</description>
+      </item>
+      
+      <item>
+        <title>Useful Queries</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/useful-queries/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/useful-queries/</guid>
+        <description>Query Securities Request: query { allSecurities { nodes { id holdingsBySecurityId { nodes { id investorId amount createdOn accountByInvestorId { id name email } } } } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;allSecurities&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;6a93a168-31b6-4a67-b9f9-8cda51e5e6ba&amp;#34;, &amp;#34;holdingsBySecurityId&amp;#34;: { &amp;#34;nodes&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;67ebd6a5-3ffa-4336-b683-31d1d4251a2c&amp;#34;, &amp;#34;investorId&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;amount&amp;#34;: &amp;#34;100000.000000000000000000&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2021-12-16T22:05:46.253555+00:00&amp;#34;, &amp;#34;accountByInvestorId&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;d6fb328d-2426-4689-98d0-8a0a03679a03&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Bob Smith&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;bob.smith@example.com&amp;#34; } } ] } } ] } } } In this example, the query fetches all securities (and respective holdings) for which you are the listing ATS.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

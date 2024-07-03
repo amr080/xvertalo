@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>7 Coding Examples on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/coding-examples/</link>
+    <description>Recent content in 7 Coding Examples on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/coding-examples/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Overview</title>
+        <link>https://api.vertalo.com/docs/coding-examples/overview/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/overview/</guid>
+        <description>These coding examples are meant to provide you with guidance on how to program the process of authenticating and authorizing with the Vertalo platform via the API, and show examples of how to submit queries to the Vertalo GraphQL endpoint. You will need to request your API credentials from Vertalo before you can access the API.</description>
+      </item>
+      
+      <item>
+        <title>Python</title>
+        <link>https://api.vertalo.com/docs/coding-examples/python-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/python-example/</guid>
+        <description>This example makes use of an open-source GraphQL client module for Python, gql. You must first install this module into your Python environment to use it, as well as other modules referenced if not already installed.
+import requests import json # # Import from GraphQL client library for Python... # from gql import gql, Client from gql.transport.aiohttp import AIOHTTPTransport # # Call token discovery endpoint... # response = requests.get(&amp;#34;https://sandbox.vertalo.com/authenticate/token/discovery&amp;#34;) # print(response.</description>
+      </item>
+      
+      <item>
+        <title>PHP</title>
+        <link>https://api.vertalo.com/docs/coding-examples/php-example/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/php-example/</guid>
+        <description>This example makes use of the cURL extension for PHP. This extension must be enabled in your PHP configuration to use it.
+&amp;lt;?php $ch = curl_init(); curl_setopt($ch, CURLOPT_URL, &amp;#34;https://www.sandbox.vertalo.com/authenticate/token/discovery&amp;#34;); curl_exec($ch); curl_close($ch); // // Get LOGIN access token... // $client_id = &amp;#34;&amp;lt;your client ID&amp;gt;&amp;#34;; $client_secret = &amp;#34;&amp;lt;your client secret&amp;gt;&amp;#34;; curl_setopt($ch, CURLOPT_URL, &amp;#34;https://www.sandbox.vertalo.com/authenticate/token/login?client_id=$client_id&amp;amp;client_secret=$client_secret&amp;#34;); curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); $response = curl_exec($ch); $response = json_decode($response, true); $access_token = $response[&amp;#34;token&amp;#34;][&amp;#34;access_token&amp;#34;]; $users_account_id = $response[&amp;#34;roles&amp;#34;][&amp;#34;data&amp;#34;][0][&amp;#34;users_account_id&amp;#34;]; // print(&amp;#34;$access_token\n&amp;#34;); // print(&amp;#34;$users_account_id\n&amp;#34;); // // Get ROLE access token.</description>
+      </item>
+      
+    
+  </channel>
+</rss>

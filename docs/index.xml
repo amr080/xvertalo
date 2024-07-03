@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/</link>
+    <description>Recent content in Docs on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Sat, 11 Jan 2020 14:09:21 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>1 Introduction</title>
+        <link>https://api.vertalo.com/docs/introduction/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/introduction/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>2 Issuer Actions</title>
+        <link>https://api.vertalo.com/docs/issuer/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>3 Broker Actions</title>
+        <link>https://api.vertalo.com/docs/broker/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/broker/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>4 ATS Actions</title>
+        <link>https://api.vertalo.com/docs/ats-exchange/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/ats-exchange/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>5 Custodian Actions</title>
+        <link>https://api.vertalo.com/docs/custodian/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/custodian/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>6 Access via API Key</title>
+        <link>https://api.vertalo.com/docs/api-key/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/api-key/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>7 Coding Examples</title>
+        <link>https://api.vertalo.com/docs/coding-examples/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/coding-examples/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>Appendix</title>
+        <link>https://api.vertalo.com/docs/appendix/</link>
+        <pubDate>Tue, 28 Jan 2020 00:34:39 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/appendix/</guid>
+        <description></description>
+      </item>
+      
+    
+  </channel>
+</rss>

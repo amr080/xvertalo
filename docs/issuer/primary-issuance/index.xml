@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Primary Issuance on Vertalo API Primer</title>
+    <link>https://api.vertalo.com/docs/issuer/primary-issuance/</link>
+    <description>Recent content in Primary Issuance on Vertalo API Primer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright &amp;copy; {year} Vertalo Inc., a SeriesX Company. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 28 Jan 2020 00:34:39 +0900</lastBuildDate>
+    
+        <atom:link href="https://api.vertalo.com/docs/issuer/primary-issuance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Create a Distribution</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/create-distribution/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/create-distribution/</guid>
+        <description>Request: mutation { makeDistribution ( input: { _allocationId: &amp;#34;abb668d2-63d2-43dd-b495-b1e413a69427&amp;#34; accountEmail: &amp;#34;bob.smith@example.com&amp;#34; name: &amp;#34;Bob Smith&amp;#34; amount: &amp;#34;100000&amp;#34; } ) { distribution { id status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeDistribution&amp;#34;: { &amp;#34;distribution&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;drafted&amp;#34; } } } } A distribution is an initial assignment of a quantity of units (typically shares) to an investor within an allocation which is meant to represent a pro forma position that the investor is interested in taking in a particular offering.</description>
+      </item>
+      
+      <item>
+        <title>Record a Payment</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/record-payment/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/record-payment/</guid>
+        <description>Request: mutation { createDistributionPayment( input: { distributionPayment: { distributionId: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; amount: &amp;#34;100000&amp;#34; } } ) { distributionPayment { id paidOn } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;createDistributionPayment&amp;#34;: { &amp;#34;distributionPayment&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;1e0b807f-4d89-4331-92b7-f7beaf25617a&amp;#34;, &amp;#34;paidOn&amp;#34;: &amp;#34;2022-01-01T18:49:48.237216+00:00&amp;#34; } } } } In this example, the mutation records a payment against a distribution. The ID and paid-on date of the payment is returned in the payload. Note that the distribution ID returned from the previous example of the creation of a distribution is used in the recording of the payment.</description>
+      </item>
+      
+      <item>
+        <title>Update a Distribution</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/update-distribution/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/update-distribution/</guid>
+        <description>Request: mutation { updateDistributionById ( input: { id: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; distributionPatch: {status: &amp;#34;closed&amp;#34;} } ) { distribution { id status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;updateDistributionById&amp;#34;: { &amp;#34;distribution&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;closed&amp;#34; } } } } When a distribution is initially created for an investor the status of the distribution is set to &amp;ldquo;drafted&amp;rdquo;, indicating that this is a pro forma distribution that the issuer will approve in order to allow the investor to proceed through the investment process.</description>
+      </item>
+      
+      <item>
+        <title>Request Distribution Issuance</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/request-distribution-issuance/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/request-distribution-issuance/</guid>
+        <description>Request: mutation { makeTaRequestDistributionIssuance ( input: { distributionId: &amp;#34;8f444de2-bfd9-4ca5-b6f4-74c4e511cebc&amp;#34; } ) { taRequest { id stagedTransferId createdOn status } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTaRequestDistributionIssuance&amp;#34;: { &amp;#34;taRequest&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;d2688715-c957-4125-b402-6337fe69adfe&amp;#34;, &amp;#34;stagedTransferId&amp;#34;: &amp;#34;cd8baf68-2f1e-4632-b3eb-701a4d85a1b8&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2023-07-20T22:26:36.247596+00:00&amp;#34; &amp;#34;status&amp;#34;: &amp;#34;pending&amp;#34;, } } } } In this example, the mutation formally commences the process of issuing shares to an investor based on a distribution ID to create a transfer request. (The transfer, in this case, is from treasury to the investor.</description>
+      </item>
+      
+      <item>
+        <title>Request Direct Issuance</title>
+        <link>https://api.vertalo.com/docs/issuer/primary-issuance/request-issuance/</link>
+        <pubDate>Tue, 28 Jan 2020 00:39:09 +0900</pubDate>
+        
+        <guid>https://api.vertalo.com/docs/issuer/primary-issuance/request-issuance/</guid>
+        <description>Request: mutation { makeTaRequestIssuance ( input: { securityId: &amp;#34;0994921c-647f-4809-823c-2cd20ac7646b&amp;#34; toAccountId: &amp;#34;ce47dc3e-10f0-4ce1-beb9-b74debb144ac&amp;#34; amount: &amp;#34;20000&amp;#34; costBasis: &amp;#34;5.00&amp;#34; issuanceDate: &amp;#34;2023-01-01&amp;#34; } ) { taRequest { id status createdOn } } } Response: { &amp;#34;data&amp;#34;: { &amp;#34;makeTaRequestIssuance&amp;#34;: { &amp;#34;taRequest&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;740cffb4-ae5a-4256-8083-c9ecad4f6f94&amp;#34;, &amp;#34;status&amp;#34;: &amp;#34;pending&amp;#34;, &amp;#34;createdOn&amp;#34;: &amp;#34;2023-07-20T22:26:36.247596+00:00&amp;#34; } } } } Numeric field Usage amount The total number of units/shares costBasis The per unit/share price It may be the case that an issuer has an existing cap table based on the prior issuance of a security to a set of investors, that they then want to bring to the Vertalo platform.</description>
+      </item>
+      
+    
+  </channel>
+</rss>
